@@ -1,0 +1,1 @@
+ALTER TABLE venda ADD COLUMN observacao VARCHAR(1000)

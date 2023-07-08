@@ -1,0 +1,24 @@
+server:
+  port: ${APP_PORT:8080}
+  use-forward-headers: true
+  servlet:
+    context-path: /api
+
+spring:
+  flyway:
+    baselineOnMigrate: true
+  # Spring JDBC configuration
+  datasource:
+    url: jdbc:postgresql://${DATASOURCE_URL:localhost}:${DATASOURCE_PORT:5432}/${DATASOURCE_DB:lincegps}
+    username: ${DATASOURCE_USERNAME:postgres}
+    password: ${DATASOURCE_PASSWORD:123456}
+    driver-class-name: org.postgresql.Driver
+  # Spring Data JPA configuration
+  jpa:
+    database: POSTGRESQL
+    show-sql: ${SHOW_SQL:true}
+    properties.hibernate.format_sql: ${FORMAT_SQL:true}
+
+jwt:
+  secret: ${SECRET_JWT:SequenciaDeCaracteresParaAssinarToken}
+  expiration: 600000

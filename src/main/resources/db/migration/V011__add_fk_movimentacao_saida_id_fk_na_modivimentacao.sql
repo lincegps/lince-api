@@ -1,0 +1,1 @@
+ALTER TABLE movimentacao ADD COLUMN id_movimentacao_saida int4

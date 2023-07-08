@@ -1,0 +1,16 @@
+version: '3.4'
+services:
+  db:
+    container_name: postgres
+    image: postgres:latest
+    network_mode: bridge
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: 123456
+    volumes:
+    - postgres_data:/var/lib/postgres
+    - ./dbscripts/postgres:/docker-entrypoint-initdb.d
+
+volumes:
+  postgres_data:

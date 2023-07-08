@@ -1,0 +1,1 @@
+ALTER TABLE venda ALTER COLUMN numero_serie TYPE varchar(255);
